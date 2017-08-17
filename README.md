@@ -1,2 +1,2 @@
-# sequelized-burger
-sequelize
+# burger
+Week 14 Homework
