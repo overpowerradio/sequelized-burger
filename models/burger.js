@@ -1,18 +1,21 @@
-module.exports = function(sequelize, DataTypes) {
- // Add code here to create a Post model
- // This model needs a title, a body, and a category
- // Don't forget to 'return' the post after defining
- var Burger = sequelize.define('Burgers', {
-  burger_name: {
-    type: DataTypes.STRING,
-    allowNull: false,
-    validate: {len: [1, 160]}
-    },
-  devoured: {
-    type: DataTypes.BOOLEAN,
-    defaultValue: false
-    },
+// Burger models
 
-})
- return Burger
+// The burger has a burger_name attribute of type DataTypes.String
+// and a devoured attribute that is false by default
+
+module.exports = function(sequelize, DataTypes) {
+  var Burger = sequelize.define("Burger", {
+    burger_name: DataTypes.STRING,
+    devoured: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false
+    }
+  }, {
+    classMethods: {
+      associate: function(models) {
+        // associations can be defined here
+      }
+    }
+  });
+  return Burger;
 };

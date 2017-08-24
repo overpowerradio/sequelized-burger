@@ -10,10 +10,10 @@
                  
                 <li>
                 {{this.burger_name}}
-                    <form action="/{{this.id}}?_method=PUT" method="POST">
-                          <input type="hidden" name="devoured" value="true">
-                          <button type="submit">Devour</button>
-                    </form>
+                    <form method="POST" action="/burgers/update?_method=PUT" class="button-size">
+            <input input type="hidden" type="text" name="burger_id" value={{this.id}}><br>
+            <button type="submit" class="btn btn-default">Devour it!</button>
+          </form>
                 </li>
       
                 
@@ -28,7 +28,7 @@
           <img src="./assets/img/veggieB.png" id="headimg">
         </div>
         <h2>Create a Burger:</h2>
-        <form class="create-update-form" action="/" method="POST">
+        <form class="create-update-form" action="/burgers/create" method="POST">
 
           <div class="form-group">
             <label for="ca">Burger Name:</label>
@@ -36,6 +36,10 @@
             <button type="submit">Add A Burger</button>
           </div>
         </form>
+       <!--  <form action="/burgers/create" method="POST">
+        <input type="text" class="form-control" name="burger_name" value="" id="enter_text">
+        <button type="submit" class="btn btn-primary" id="text-enter-button">Submit</button>
+      </form> -->
     </div>
     <div class="col-xs-4">
         <div id="Col3">
